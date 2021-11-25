@@ -6,13 +6,16 @@ import "./App.css";
 import AddTutorial from "./components/AddTutorial";
 import Tutorial from "./components/Tutorial";
 import TutorialsList from "./components/TutorialsList";
+import StudentList from "./components/StudentList";
+import StudentForm from "./components/StudentForm";
+import Student from "./components/Student";
 
 function App() {
   return (
     <Router>
       <nav className="navbar navbar-expand navbar-dark bg-dark">
         <a href="/tutorials" className="navbar-brand">
-          bezKoder
+          Redux-React Hooks
         </a>
         <div className="navbar-nav mr-auto">
           <li className="nav-item">
@@ -25,6 +28,13 @@ function App() {
               Add
             </Link>
           </li>
+          <li className="nav-item">
+            <Link to={"/students"} className="nav-link">
+              Students
+            </Link>
+          </li>
+
+  
         </div>
       </nav>
 
@@ -33,6 +43,9 @@ function App() {
           <Route exact path={["/", "/tutorials"]} component={TutorialsList} />
           <Route exact path="/add" component={AddTutorial} />
           <Route path="/tutorials/:id" component={Tutorial} />
+
+          <Route exact path={["/", "/students"]} component={Student} />
+
         </Switch>
       </div>
     </Router>

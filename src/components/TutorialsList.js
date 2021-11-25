@@ -12,7 +12,10 @@ const TutorialsList = () => {
   const [currentIndex, setCurrentIndex] = useState(-1);
   const [searchTitle, setSearchTitle] = useState("");
 
-  const tutorials = useSelector(state => state.tutorials);
+  const tutorials = useSelector(state => {
+    console.log(state)
+    return state.tutorials
+  });
   const dispatch = useDispatch();
 
   useEffect(() => {
