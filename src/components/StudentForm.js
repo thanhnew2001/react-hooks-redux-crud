@@ -29,10 +29,10 @@ export default function StudentForm(){
 
         if (id>0){
             const data = JSON.stringify({id: id, name: name})
-            const res = await StudentService.update(id, data)
+            const res = await StudentService.update(data)
             dispatch({
                 type: UPDATE_STUDENT,
-                payload: res.data
+                payload: {id: id, name: name}
             })
         }
         else{
@@ -54,6 +54,11 @@ export default function StudentForm(){
         setName(editStudent.name)
     }, [editStudent])
 
+    const addNew = ()=>{
+        setId(0)
+        setName('')
+    }
+
     return (
 
         <>
@@ -61,6 +66,7 @@ export default function StudentForm(){
 
         Name: <input type='text' value={name} onChange={(e)=>setName(e.target.value)} />
         <button onClick={()=>save()}>Save</button>
+        <button onClick={()=>addNew()}>New</button>
         </>
     )
 }

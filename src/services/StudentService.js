@@ -12,8 +12,9 @@ const create = data => {
   return http.post("/students", data);
 };
 
-const update = (id, data) => {
-  return http.patch(`/students/${id}`, data);
+const update = (data) => {
+  http.put(`/students`, data);
+  return data;
 };
 
 const remove = id => {
