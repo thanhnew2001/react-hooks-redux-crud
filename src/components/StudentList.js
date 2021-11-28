@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { GET_STUDENTS, RETRIEVE_TUTORIALS } from "../actions/types";
-import StudentService from "../services/Studentservice";
+import StudentService from "../services/StudentService";
 import TutorialService from "../services/TutorialService";
 
 

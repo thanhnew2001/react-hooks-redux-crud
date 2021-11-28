@@ -1,0 +1,14 @@
+<script>
+
+const f = (a) => (b)=> (c)=>a + b + c
+
+const cf = (name)=>(dispatch)=>{
+    console.log('Save: '+name)
+    console.log(dispatch+ ':'+name)
+} 
+
+cf('Thanh')('Send')
+
+console.log(f(10)(2)(4))
+
+</script>

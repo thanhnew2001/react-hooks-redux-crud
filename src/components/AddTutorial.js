@@ -22,7 +22,7 @@ const AddTutorial = () => {
   const saveTutorial = () => {
     const { title, description } = tutorial;
 
-    dispatch(createTutorial(title, description))
+    createTutorial(title, description)(dispatch)
       .then(data => {
         setTutorial({
           id: data.id,

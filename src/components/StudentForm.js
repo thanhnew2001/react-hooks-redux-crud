@@ -17,15 +17,6 @@ export default function StudentForm(){
 
 
     const save = async ()=>{
-        // const res = await fetch('http://localhost:3000/students', {
-        //     'headers': {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     'method': 'post',
-        //     body: JSON.stringify({name: name})
-        // })
-        // const data = await res.json()
-
 
         if (id>0){
             const data = JSON.stringify({id: id, name: name})
@@ -42,10 +33,7 @@ export default function StudentForm(){
                 type: ADD_STUDENT,
                 payload: res.data
             })
-        }
-    
-
-       
+        }       
     }
 
     useEffect(()=>{
